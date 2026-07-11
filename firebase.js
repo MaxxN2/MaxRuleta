@@ -19,17 +19,20 @@ console.log("Firebase conectado correctamente ✅");
 
 async function obtenerUsuario(nombre){
 
+    console.log("Buscando:", nombre);
+
     const doc = await db.collection("usuarios")
         .doc(nombre.toLowerCase())
         .get();
 
-    if(!doc.exists){
-        return null;
+    console.log("Existe:", doc.exists);
+
+    if(doc.exists){
+        console.log("Datos:", doc.data());
     }
 
-    return doc.data();
+    return doc.exists ? doc.data() : null;
 }
-
 // ==========================
 // DESPUÉS SIGUE ESTO
 // ==========================
