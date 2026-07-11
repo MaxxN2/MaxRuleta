@@ -51,6 +51,17 @@ if (usuario === null) {
     alert("No estás habilitado para jugar.");
     return;
 }
+if (!usuario.habilitado) {
+    alert("No estás habilitado para jugar.");
+    return;
+}
+
+if (usuario.tiros <= 0) {
+    alert("Ya no tenés más giros disponibles.");
+    return;
+}
+
+await descontarTiro(nombre, usuario.tiros);
     // Probabilidades
     const probabilidades = [30, 20, 10, 5, 1, 4, 15, 15];
 
@@ -79,7 +90,24 @@ const nombresPremios = [
     "Sin Premio"
 ];
 
+wheel.animation.stopAngle = wheel.getRandomForSegment(premio);
+
+const nombresPremios = [
+    "$500",
+    "$1000",
+    "$2000",
+    "$5000",
+    "$15000",
+    "Sorpresa",
+    "Sin Premio",
+    "Sin Premio"
+];
+
+await descontarTiro(nombre);
+
 guardarParticipante(nombre, nombresPremios[premio - 1]);
+
+wheel.startAnimation();
     wheel.startAnimation();
 }
 
