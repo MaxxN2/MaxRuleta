@@ -143,27 +143,47 @@ input{
         text-align: center;
     }
 
-    canvas{
-        display: block;
-        margin: 20px auto;
-        width: 100% !important;
-        max-width: 360px;
-        height: auto !important;
+    h1{
+        font-size: 48px;
+        margin-bottom: 10px;
     }
 
-    #toggleMusic{
-        display: block;
-        margin: 15px auto;
+    .subtitulo{
+        font-size: 20px;
+        margin-bottom: 20px;
     }
 
     input{
         width: 90%;
         margin: 15px auto;
         display: block;
+        font-size: 20px;
+    }
+
+    canvas{
+        display: block;
+        width: 100% !important;
+        max-width: 360px;
+        height: auto !important;
+        margin: 20px auto;
+    }
+
+    .flecha{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #toggleMusic{
+        display: block;
+        position: static;
+        margin: 15px auto;
+        width: 180px;
     }
 
     button{
         width: 90%;
         margin: 15px auto;
+        font-size: 22px;
     }
+
 }
