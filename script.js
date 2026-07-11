@@ -46,7 +46,7 @@ if (nombre === "") {
     return;
 }
 const usuario = await obtenerUsuario(nombre);
-
+console.log(usuario);
 if (usuario === null) {
     alert("No estás habilitado para jugar.");
     return;
