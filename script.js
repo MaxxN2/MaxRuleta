@@ -67,7 +67,7 @@ if (usuario.tiros <= 0) {
 
 await descontarTiro(nombre, usuario.tiros);
     // Probabilidades
-    const probabilidades = [30, 20, 10, 5, 1, 4, 15, 15];
+    const probabilidades = [20, 12, 6, 2, 1, 2, 28, 29];
 
     const total = probabilidades.reduce((a, b) => a + b, 0);
     let numero = Math.random() * total;
