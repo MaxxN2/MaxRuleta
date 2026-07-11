@@ -84,9 +84,6 @@ await descontarTiro(nombre, usuario.tiros);
 
     wheel.animation.stopAngle = wheel.getRandomForSegment(premio);
 
-
-wheel.animation.stopAngle = wheel.getRandomForSegment(premio);
-
 const nombresPremios = [
     "$500",
     "$1000",
@@ -98,9 +95,12 @@ const nombresPremios = [
     "Sin Premio"
 ];
 
-await descontarTiro(nombre);
 
 guardarParticipante(nombre, nombresPremios[premio - 1]);
+
+wheel.stopAnimation(false);
+wheel.rotationAngle = 0;
+wheel.draw();
 
 wheel.startAnimation();
 }
