@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaxRuleta V2</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <h1>🎡 MaxRuleta</h1>
+
+    <p class="subtitulo">
+        Valor del giro <strong>$1.000</strong>
+    </p>
+
+    <input
+        type="text"
+        id="nombre"
+        placeholder="Ingresá tu nombre">
+
+    <div class="ruleta">
+
+    <div class="flecha"></div>
+
+    <canvas
+        id="canvas"
+        width="500"
+        height="500">
+    </canvas>
+
+</div>
+
+    <button id="girar">
+        GIRAR
+        
+    </button>
+
+</div>
+
+<div id="modal" class="modal oculto">
+    <div class="modal-box">
+
+        <h2 id="tituloPremio"></h2>
+
+        <button onclick="cerrarModal()">
+            Aceptar
+        </button>
+
+    </div>
+</div>
+<audio id="musica" autoplay loop>
+    <source src="assets/audio/musica.mp3" type="audio/mpeg">
+</audio>
+<script src="assets/js/TweenMax.min.js"></script>
+<script src="assets/js/Winwheel.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
