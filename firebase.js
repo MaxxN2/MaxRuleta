@@ -34,7 +34,7 @@ async function obtenerUsuario(nombre){
 // DESPUÉS SIGUE ESTO
 // ==========================
 async function descontarTiro(nombre){
-
+console.log("Entró a descontarTiro:", nombre);
     const ref = db.collection("usuarios").doc(nombre.toLowerCase());
 
     await db.runTransaction(async (transaction) => {
