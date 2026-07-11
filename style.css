@@ -153,12 +153,21 @@ input{
         margin-bottom: 20px;
     }
 
-    input{
-        width: 90%;
-        margin: 15px auto;
-        display: block;
-        font-size: 20px;
-    }
+input{
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    margin: 15px auto 8px auto;
+    box-sizing: border-box;
+}
+
+button{
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    margin: 8px auto 15px auto;
+    box-sizing: border-box;
+}
 
     canvas{
         display: block;
@@ -178,12 +187,6 @@ input{
         position: static;
         margin: 15px auto;
         width: 180px;
-    }
-
-    button{
-        width: 90%;
-        margin: 15px auto;
-        font-size: 22px;
     }
 
 }
