@@ -126,3 +126,19 @@ input{
 #toggleMusic:hover{
     background:#666;
 }
+/* ===========================
+   SOLO PARA CELULARES
+=========================== */
+@media screen and (max-width: 768px) {
+
+}
+body{
+    overflow-x: hidden;
+}
+
+canvas{
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
