@@ -45,8 +45,12 @@ if (nombre === "") {
     alert("Ingresá tu nombre antes de girar.");
     return;
 }
+console.log("LLEGUÉ HASTA ACÁ");
+
 const usuario = await obtenerUsuario(nombre);
+
 console.log(usuario);
+
 if (usuario === null) {
     alert("No estás habilitado para jugar.");
     return;
