@@ -28,16 +28,23 @@ animation:{
     }
 );
 
-document.getElementById("girar").onclick = function () {
+
 if (musica.paused) {
     musica.volume = 0.3;
     musica.play().catch(() => {});
 }
     wheel.stopAnimation(false);
 
-    wheel.rotationAngle = 0;
+    wheel.rotationAngle = 0;document.getElementById("girar").onclick = function () {
 
     wheel.draw();
+
+const nombre = document.getElementById("nombre").value.trim();
+
+if (nombre === "") {
+    alert("Ingresá tu nombre antes de girar.");
+    return;
+}
 
     // Probabilidades
     const probabilidades = [30, 20, 10, 5, 1, 4, 15, 15];
@@ -56,7 +63,18 @@ if (musica.paused) {
     }
 
     wheel.animation.stopAngle = wheel.getRandomForSegment(premio);
+const nombresPremios = [
+    "$500",
+    "$1000",
+    "$2000",
+    "$5000",
+    "$15000",
+    "Sorpresa",
+    "Sin Premio",
+    "Sin Premio"
+];
 
+guardarParticipante(nombre, nombresPremios[premio - 1]);
     wheel.startAnimation();
 }
 

@@ -12,3 +12,16 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 console.log("Firebase conectado correctamente ✅");
+function guardarParticipante(nombre, premio) {
+    db.collection("participantes").add({
+        nombre: nombre,
+        premio: premio,
+        fecha: new Date().toLocaleString()
+    })
+    .then(() => {
+        console.log("Participante guardado ✅");
+    })
+    .catch((error) => {
+        console.error("Error al guardar:", error);
+    });
+}
