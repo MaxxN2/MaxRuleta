@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "...",
-  authDomain: "...",
-  projectId: "...",
-  storageBucket: "...",
-  messagingSenderId: "...",
-  appId: "..."
+  apiKey: "AIzaSyBw11PvjkEp4MqrKEJVikCS7r8sgq2iH58",
+  authDomain: "maxruleta-19667.firebaseapp.com",
+  projectId: "maxruleta-19667",
+  storageBucket: "maxruleta-19667.firebasestorage.app",
+  messagingSenderId: "798150344122",
+  appId: "1:798150344122:web:66199a7b262309c9e0b183"
 };
 
 firebase.initializeApp(firebaseConfig);
