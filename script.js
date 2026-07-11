@@ -35,7 +35,7 @@ if (musica.paused) {
 }
     wheel.stopAnimation(false);
 
-    wheel.rotationAngle = 0;document.getElementById("girar").onclick = function () {
+    wheel.rotationAngle = 0;document.getElementById("girar").onclick = async function () {
 
     wheel.draw();
 
@@ -45,7 +45,12 @@ if (nombre === "") {
     alert("Ingresá tu nombre antes de girar.");
     return;
 }
+const usuario = await obtenerUsuario(nombre);
 
+if (usuario === null) {
+    alert("No estás habilitado para jugar.");
+    return;
+}
     // Probabilidades
     const probabilidades = [30, 20, 10, 5, 1, 4, 15, 15];
 
@@ -153,5 +158,18 @@ btnMusica.onclick = function(){
         btnMusica.innerHTML = "🔇 Música OFF";
 
     }
+
+}
+async function obtenerUsuario(nombre) {
+
+    nombre = nombre.trim().toLowerCase();
+
+    const doc = await db.collection("usuarios").doc(nombre).get();
+
+    if (!doc.exists) {
+        return null;
+    }
+
+    return doc.data();
 
 }
